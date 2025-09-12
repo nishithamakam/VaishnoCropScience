@@ -44,45 +44,43 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-          <div className="d-flex gap-2 align-items-center ms-auto flex-wrap">
-            <Link 
-              href="/" 
-              className="btn btn-outline-success btn-sm"
-              onClick={(e) => handleNavClick(e, '#home')}
-              data-testid="nav-home"
-            >
-              Home
-            </Link>
-            <Link 
-              href="/about" 
-              className="btn btn-outline-success btn-sm"
-              data-testid="nav-about"
-            >
-              About Us
-            </Link>
-            <Link 
-              href="/products" 
-              className="btn btn-outline-success btn-sm"
-              data-testid="nav-products"
-            >
-              Products
-            </Link>
-            <Link 
-              href="/resources" 
-              className="btn btn-outline-success btn-sm"
-              data-testid="nav-resources"
-            >
-              Resources
-            </Link>
-            <Link 
-              href="/contact" 
-              className="btn btn-outline-success btn-sm"
-              data-testid="nav-contact"
-            >
-              Contact Us
-            </Link>
-          </div>
+        <div className="d-flex gap-2 align-items-center" style={{ marginLeft: 'auto' }}>
+          <Link 
+            href="/" 
+            className="btn btn-outline-success btn-sm"
+            onClick={(e) => handleNavClick(e, '#home')}
+            data-testid="nav-home"
+          >
+            Home
+          </Link>
+          <Link 
+            href="/about" 
+            className="btn btn-outline-primary btn-sm"
+            data-testid="nav-about"
+          >
+            About Us
+          </Link>
+          <Link 
+            href="/products" 
+            className="btn btn-success btn-sm"
+            data-testid="nav-products"
+          >
+            Products
+          </Link>
+          <Link 
+            href="/resources" 
+            className="btn btn-outline-info btn-sm"
+            data-testid="nav-resources"
+          >
+            Resources
+          </Link>
+          <Link 
+            href="/contact" 
+            className="btn btn-danger btn-sm"
+            data-testid="nav-contact"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </nav>
