@@ -88,59 +88,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Ensure navbar links are visible on desktop */
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-    justify-content: flex-end;
-  }
-  
-  .navbar-expand-lg .navbar-nav {
-    flex-direction: row !important;
-  }
-  
-  .navbar-expand-lg .navbar-toggler {
-    display: none !important;
-  }
-}
-
-/* Force show navbar on all screens */
-.navbar-collapse {
-  display: flex !important;
-  flex-basis: auto;
-  justify-content: flex-end;
-}
-
-.navbar-nav {
-  flex-direction: row !important;
-  margin-left: auto;
-}
-
-/* Hide toggler on large screens, show on small */
-@media (min-width: 992px) {
-  .navbar-toggler {
-    display: none !important;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    display: none !important;
-  }
-  
-  .navbar-collapse.show {
-    display: block !important;
-  }
-  
-  .navbar-nav {
-    flex-direction: column !important;
-  }
-  
-  .navbar-toggler {
-    display: block !important;
-  }
-}
 
 .navbar-brand {
   font-weight: 700;
@@ -361,7 +308,7 @@ body {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, var(--secondary-green), hsl(140, 50%, 25%));
+  background: linear-gradient(135deg, var(--accent-red), hsl(0, 75%, 45%));
   color: white;
   padding: 4rem 0 2rem;
   position: relative;
@@ -417,27 +364,69 @@ body {
   border-color: var(--light-green);
 }
 
+/* Circular Navigation Buttons */
+.nav-btn-circular {
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn-circular:hover {
+  background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  color: white;
+}
+
+.nav-btn-circular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nav-btn-circular:hover::before {
+  left: 100%;
+}
+
 /* Floating Message Button */
 .floating-message-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
   color: white;
   border: none;
-  border-radius: 50px;
-  padding: 1rem 1.5rem;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .floating-message-btn:hover {
-  background-color: var(--secondary-green);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
 }
 
 /* Modal Customizations */

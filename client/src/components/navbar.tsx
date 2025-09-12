@@ -34,7 +34,7 @@ export default function Navbar() {
         </Link>
         
         <button 
-          className="navbar-toggler" 
+          className="navbar-toggler d-lg-none" 
           type="button" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           data-testid="navbar-toggle"
@@ -44,10 +44,11 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        <div className="d-flex gap-2 align-items-center" style={{ marginLeft: 'auto' }}>
+        {/* Desktop Navigation */}
+        <div className="d-none d-lg-flex gap-3 align-items-center" style={{ marginLeft: 'auto' }}>
           <Link 
             href="/" 
-            className="btn btn-outline-success btn-sm"
+            className="nav-btn-circular"
             onClick={(e) => handleNavClick(e, '#home')}
             data-testid="nav-home"
           >
@@ -55,32 +56,84 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/about" 
-            className="btn btn-outline-primary btn-sm"
+            className="nav-btn-circular"
             data-testid="nav-about"
           >
             About Us
           </Link>
           <Link 
             href="/products" 
-            className="btn btn-success btn-sm"
+            className="nav-btn-circular"
             data-testid="nav-products"
           >
             Products
           </Link>
           <Link 
             href="/resources" 
-            className="btn btn-outline-info btn-sm"
+            className="nav-btn-circular"
             data-testid="nav-resources"
           >
             Resources
           </Link>
           <Link 
             href="/contact" 
-            className="btn btn-danger btn-sm"
+            className="nav-btn-circular"
             data-testid="nav-contact"
           >
             Contact Us
           </Link>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className={`collapse navbar-collapse d-lg-none ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link 
+                href="/" 
+                className="nav-link"
+                onClick={(e) => handleNavClick(e, '#home')}
+                data-testid="nav-home-mobile"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                href="/about" 
+                className="nav-link"
+                data-testid="nav-about-mobile"
+              >
+                About Us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                href="/products" 
+                className="nav-link"
+                data-testid="nav-products-mobile"
+              >
+                Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                href="/resources" 
+                className="nav-link"
+                data-testid="nav-resources-mobile"
+              >
+                Resources
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                href="/contact" 
+                className="nav-link"
+                data-testid="nav-contact-mobile"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

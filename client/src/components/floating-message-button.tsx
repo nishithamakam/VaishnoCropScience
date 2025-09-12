@@ -50,7 +50,7 @@ export default function FloatingMessageButton() {
         onClick={() => setIsModalOpen(true)}
         data-testid="floating-message-button"
       >
-        <i className="fas fa-comments me-2"></i>Message Us
+        <i className="fas fa-comments"></i>
       </button>
 
       {/* Bootstrap Modal */}
