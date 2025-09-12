@@ -84,56 +84,67 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`collapse navbar-collapse d-lg-none ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link 
-                href="/" 
-                className="nav-link"
-                onClick={(e) => handleNavClick(e, '#home')}
-                data-testid="nav-home-mobile"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                href="/about" 
-                className="nav-link"
-                data-testid="nav-about-mobile"
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                href="/products" 
-                className="nav-link"
-                data-testid="nav-products-mobile"
-              >
-                Products
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                href="/resources" 
-                className="nav-link"
-                data-testid="nav-resources-mobile"
-              >
-                Resources
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                href="/contact" 
-                className="nav-link"
-                data-testid="nav-contact-mobile"
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+        {/* Mobile Navigation Sidebar */}
+        <div className={`mobile-sidebar d-lg-none ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
+          <div className="mobile-sidebar-content">
+            <div className="mobile-sidebar-header">
+              <h5>Navigation</h5>
+              <button 
+                className="btn-close" 
+                onClick={() => setIsMenuOpen(false)}
+                data-testid="mobile-close-button"
+              ></button>
+            </div>
+            <ul className="mobile-nav-list">
+              <li>
+                <Link 
+                  href="/" 
+                  className="mobile-nav-link"
+                  onClick={(e) => handleNavClick(e, '#home')}
+                  data-testid="nav-home-mobile"
+                >
+                  <i className="fas fa-home me-3"></i>Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/about" 
+                  className="mobile-nav-link"
+                  data-testid="nav-about-mobile"
+                >
+                  <i className="fas fa-users me-3"></i>About Us
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/products" 
+                  className="mobile-nav-link"
+                  data-testid="nav-products-mobile"
+                >
+                  <i className="fas fa-seedling me-3"></i>Products
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/resources" 
+                  className="mobile-nav-link"
+                  data-testid="nav-resources-mobile"
+                >
+                  <i className="fas fa-book me-3"></i>Resources
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="mobile-nav-link"
+                  data-testid="nav-contact-mobile"
+                >
+                  <i className="fas fa-envelope me-3"></i>Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="mobile-sidebar-overlay" onClick={() => setIsMenuOpen(false)}></div>
         </div>
       </div>
     </nav>
