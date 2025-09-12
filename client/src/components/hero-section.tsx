@@ -1,10 +1,12 @@
 import { Link } from 'wouter';
+import HeroBackgroundCarousel from './hero-background-carousel';
 
 export default function HeroSection() {
   return (
     <section id="home" className="hero-section" data-testid="hero-section">
+      <HeroBackgroundCarousel />
       <div className="hero-overlay"></div>
-      <div className="container">
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row">
           <div className="col-lg-8">
             <div className="hero-content">

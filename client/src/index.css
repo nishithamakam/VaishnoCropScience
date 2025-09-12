@@ -108,13 +108,113 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: url('../../../attached_assets/1a062644fd9309daddd1764a29458335_1757703904284.jpg') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
   color: white;
   position: relative;
   overflow: hidden;
+}
+
+/* Hero Background Carousel */
+.hero-background-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.05);
+  animation: backgroundZoom 20s infinite;
+}
+
+.hero-background-image.active {
+  opacity: 1;
+}
+
+.hero-background-image.loaded {
+  transform: scale(1);
+}
+
+@keyframes backgroundZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Carousel Indicators */
+.hero-carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-carousel-indicator:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.hero-carousel-indicator.active {
+  background: var(--accent-red);
+  border-color: white;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.3);
+}
+
+.hero-carousel-indicator.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: indicatorShine 2s infinite;
+}
+
+@keyframes indicatorShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .hero-overlay {
