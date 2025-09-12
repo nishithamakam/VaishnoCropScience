@@ -86,6 +86,60 @@ body {
   padding: 1rem 0;
 }
 
+/* Ensure navbar links are visible on desktop */
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: flex-end;
+  }
+  
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row !important;
+  }
+  
+  .navbar-expand-lg .navbar-toggler {
+    display: none !important;
+  }
+}
+
+/* Force show navbar on all screens */
+.navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  flex-direction: row !important;
+  margin-left: auto;
+}
+
+/* Hide toggler on large screens, show on small */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: none !important;
+  }
+  
+  .navbar-collapse.show {
+    display: block !important;
+  }
+  
+  .navbar-nav {
+    flex-direction: column !important;
+  }
+  
+  .navbar-toggler {
+    display: block !important;
+  }
+}
+
 .navbar-brand {
   font-weight: 700;
   color: var(--primary-green) !important;
