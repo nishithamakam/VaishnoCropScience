@@ -80,10 +80,12 @@ body {
 
 /* Navigation */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px var(--shadow);
-  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+  transition: all 0.3s ease;
 }
 
 /* Ensure navbar links are visible on desktop */
@@ -159,13 +161,28 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(76, 175, 80, 0.6)),
-              url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080') center/cover;
+  background: url('../../../attached_assets/1a062644fd9309daddd1764a29458335_1757703904284.jpg') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
   color: white;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(76, 175, 80, 0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
@@ -182,24 +199,42 @@ body {
 }
 
 .btn-custom {
-  background-color: var(--accent-red);
+  background: linear-gradient(135deg, var(--accent-red), hsl(0, 75%, 45%));
   border: none;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(244, 67, 54, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-custom:hover {
-  background-color: hsl(0, 75%, 50%);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, hsl(0, 75%, 45%), var(--accent-red));
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(244, 67, 54, 0.4);
   color: white;
+}
+
+.btn-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-custom:hover::before {
+  left: 100%;
 }
 
 /* Logo styles */
@@ -231,54 +266,80 @@ body {
 
 /* Section Styling */
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
+  position: relative;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--primary-green);
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   text-align: center;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-red), var(--primary-green));
+  border-radius: 2px;
 }
 
 /* Products Section */
 .product-card {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   margin-bottom: 2rem;
   height: 100%;
+  border: 1px solid rgba(76, 175, 80, 0.1);
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(-15px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-green);
 }
 
 .product-card img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
 }
 
 .product-card-body {
-  padding: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
 }
 
 .product-card h5 {
   color: var(--primary-green);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
 }
 
 .product-card .subtitle {
   color: var(--accent-red);
-  font-weight: 500;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Contact Section */
@@ -300,40 +361,60 @@ body {
 
 /* Footer */
 .footer {
-  background-color: var(--secondary-green);
+  background: linear-gradient(135deg, var(--secondary-green), hsl(140, 50%, 25%));
   color: white;
-  padding: 3rem 0 1rem;
+  padding: 4rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-red), var(--primary-green), var(--accent-red));
 }
 
 .footer h5 {
   color: var(--light-green);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .footer a {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .footer a:hover {
   color: var(--light-green);
+  transform: translateX(5px);
 }
 
 .social-links a {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255,255,255,0.1);
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
   border-radius: 50%;
   text-align: center;
-  line-height: 40px;
+  line-height: 45px;
   margin: 0 0.5rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid rgba(255,255,255,0.1);
 }
 
 .social-links a:hover {
-  background-color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+  border-color: var(--light-green);
 }
 
 /* Floating Message Button */

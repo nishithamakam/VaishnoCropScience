@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 export default function HeroSection() {
   return (
     <section id="home" className="hero-section" data-testid="hero-section">
+      <div className="hero-overlay"></div>
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
