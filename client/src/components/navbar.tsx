@@ -57,6 +57,7 @@ export default function Navbar() {
           <Link 
             href="/about" 
             className="nav-btn-circular"
+            onClick={(e) => handleNavClick(e, '#about')}
             data-testid="nav-about"
           >
             About Us
@@ -110,6 +111,7 @@ export default function Navbar() {
                 <Link 
                   href="/about" 
                   className="mobile-nav-link"
+                  onClick={(e) => handleNavClick(e, '#about')}
                   data-testid="nav-about-mobile"
                 >
                   <i className="fas fa-users me-3"></i>About Us
