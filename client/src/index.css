@@ -308,7 +308,7 @@ body {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, hsl(345, 70%, 60%), hsl(350, 80%, 65%));
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
   color: white;
   padding: 4rem 0 2rem;
   position: relative;
@@ -440,11 +440,13 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .mobile-sidebar.show {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-sidebar-overlay {
@@ -454,7 +456,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  cursor: pointer;
 }
 
 .mobile-sidebar-content {
@@ -464,12 +466,12 @@ body {
   width: 300px;
   max-width: 80vw;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
-  backdrop-filter: blur(20px);
+  background: white;
   border-left: 1px solid rgba(76, 175, 80, 0.2);
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
 }
 
 .mobile-sidebar.show .mobile-sidebar-content {
