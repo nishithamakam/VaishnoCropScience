@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* VCS Theme Colors based on logo */
+  --primary-green: hsl(120, 60%, 45%);
+  --secondary-green: hsl(140, 50%, 35%);
+  --light-green: hsl(120, 40%, 95%);
+  --accent-red: hsl(0, 75%, 55%);
+  --background: hsl(60, 20%, 98%);
+  --text-dark: hsl(220, 15%, 20%);
+  --text-muted: hsl(220, 15%, 50%);
+  --border-light: hsl(120, 20%, 90%);
+  --shadow: hsla(0, 0%, 0%, 0.1);
+  
+  /* Existing shadcn variables */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 25%, 7.8431%);
+  --card: hsl(180, 6.6667%, 97.0588%);
+  --card-foreground: hsl(210, 25%, 7.8431%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 25%, 7.8431%);
+  --primary: hsl(120, 60%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(140, 50%, 35%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 1.9608%, 90%);
+  --muted-foreground: hsl(210, 25%, 7.8431%);
+  --accent: hsl(0, 75%, 55%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(120, 20%, 90%);
+  --input: hsl(200, 23.0769%, 97.4510%);
+  --ring: hsl(120, 60%, 45%);
+  --radius: 1.3rem;
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(200, 6.6667%, 91.1765%);
+  --card: hsl(228, 9.8039%, 10%);
+  --card-foreground: hsl(0, 0%, 85.0980%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(200, 6.6667%, 91.1765%);
+  --primary: hsl(120, 60%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(140, 50%, 35%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 9.4118%);
+  --muted-foreground: hsl(210, 3.3898%, 46.2745%);
+  --accent: hsl(0, 75%, 55%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(356.3033, 90.5579%, 54.3137%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(210, 5.2632%, 14.9020%);
+  --input: hsl(207.6923, 27.6596%, 18.4314%);
+  --ring: hsl(120, 60%, 45%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background);
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Navigation */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px var(--shadow);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-green) !important;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-green) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(76, 175, 80, 0.6)),
+              url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080') center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn-custom {
+  background-color: var(--accent-red);
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: hsl(0, 75%, 50%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* Logo styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vcs-logo {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, var(--light-green) 0%, var(--primary-green) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid var(--primary-green);
+}
+
+.vcs-logo::before {
+  content: 'VCS';
+  color: var(--accent-red);
+  font-weight: 700;
+  font-size: 0.7rem;
+  position: absolute;
+}
+
+/* Section Styling */
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Products Section */
+.product-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 1.5rem;
+}
+
+.product-card h5 {
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .subtitle {
+  color: var(--accent-red);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, var(--light-green), white);
+}
+
+.form-control {
+  border: 2px solid var(--border-light);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-green);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer h5 {
+  color: var(--light-green);
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--light-green);
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-green);
+}
+
+/* Floating Message Button */
+.floating-message-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-message-btn:hover {
+  background-color: var(--secondary-green);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Modal Customizations */
+.modal-header {
+  background-color: var(--primary-green);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Placeholder sections */
+.placeholder-section {
+  background: linear-gradient(135deg, var(--light-green), rgba(255,255,255,0.5));
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.placeholder-content {
+  max-width: 600px;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+.placeholder-content i {
+  font-size: 4rem;
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+}
+
+.placeholder-content h2 {
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .floating-message-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
