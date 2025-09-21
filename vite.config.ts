@@ -19,6 +19,7 @@ export default defineConfig({
         ]
       : []),
   ],
+  base: '/VaishnoCropScience/', 
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
