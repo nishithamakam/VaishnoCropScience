@@ -9,19 +9,70 @@ export default function FloatingMessageButton() {
     message: ''
   });
   const { toast } = useToast();
+   const nameRegex = /^[a-zA-Z\s]{2,50}$/;  
+  const contactRegex = /^(?:\d{10}|[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,})$/;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const messageRegex = /^.{10,500}$/;
+    const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name.trim() || !formData.contact.trim() || !formData.message.trim()) {
+
+    // Validate Name
+    if (!formData.name.trim()) {
       toast({
         title: "Validation Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
+        description: "Please enter your full name.",
+        variant: "destructive"
       });
       return;
     }
+    if (!nameRegex.test(formData.name.trim())) {
+      toast({
+        title: "Validation Error",
+        description: "Name must be 2-50 characters and contain only letters and spaces.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Validate Contact
+    if (!formData.contact.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter your email or phone number.",
+        variant: "destructive"
+      });
+      return;
+    }
+    if (!contactRegex.test(formData.contact.trim())) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a valid email or phone number.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Validate Message
+    if (!formData.message.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please write your message.",
+        variant: "destructive"
+      });
+      return;
+    }
+    if (!messageRegex.test(formData.message.trim())) {
+      toast({
+        title: "Validation Error",
+        description: "Message must be between 10 and 500 characters.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+   
+   
+     
 
     // Simulate form submission
     console.log('Contact form submission:', formData);
@@ -75,11 +126,11 @@ export default function FloatingMessageButton() {
             </div>
             <div className="modal-body p-4">
               <p className="mb-4 text-center text-muted" data-testid="modal-description">
-                Please fill out the form below and we will get back to you as soon as possible
+                Please fill out the form below and we will get back to you as soon as possible.
               </p>
               <form onSubmit={handleSubmit} data-testid="modal-contact-form">
                 <div className="mb-3">
-                  <label htmlFor="modalName" className="form-label">Full Name *</label>
+                  <label htmlFor="modalName" className="form-label">Full Name</label>
                   <input 
                     type="text" 
                     className="form-control" 
@@ -93,7 +144,7 @@ export default function FloatingMessageButton() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="modalContact" className="form-label">Email / Phone Number *</label>
+                  <label htmlFor="modalContact" className="form-label">Email / Phone Number</label>
                   <input 
                     type="text" 
                     className="form-control" 
@@ -107,7 +158,7 @@ export default function FloatingMessageButton() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="modalMessage" className="form-label">Write to Us *</label>
+                  <label htmlFor="modalMessage" className="form-label">Write to Us</label>
                   <textarea 
                     className="form-control" 
                     id="modalMessage" 

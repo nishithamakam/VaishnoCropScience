@@ -1,6 +1,6 @@
-import logoImage from "@assets/Screenshot_2025-09-12-23-52-51-16_1c337646f29875672b5a61192b9010f9_1757701912402.jpg";
+import logoImage from "@assets/logo.jpg";
 
-export default function VCSLogo({ size = 40 }: { size?: number }) {
+export default function VCSLogo({ size = 75 }: { size?: number }) {
   return (
     <img 
       src={logoImage}

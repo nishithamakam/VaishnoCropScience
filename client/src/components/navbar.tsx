@@ -29,7 +29,10 @@ export default function Navbar() {
         <Link href="/" className="navbar-brand" data-testid="navbar-brand">
           <div className="logo-container">
             <VCSLogo />
-            <span>Vaishno Crop Science</span>
+             <span style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: '2rem' }}>
+               Vaishno Crop Science
+             </span>
+
           </div>
         </Link>
         
@@ -45,7 +48,7 @@ export default function Navbar() {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="d-none d-lg-flex gap-3 align-items-center" style={{ marginLeft: 'auto' }}>
+        <div className="d-none d-lg-flex gap-5 align-items-center" style={{ marginLeft: 'auto' }}>
           <Link 
             href="/" 
             className="nav-btn-circular"
@@ -89,7 +92,7 @@ export default function Navbar() {
         <div className={`mobile-sidebar d-lg-none ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
           <div className="mobile-sidebar-content">
             <div className="mobile-sidebar-header">
-              <h5>Navigation</h5>
+              <h5>Main Menu</h5>
               <button 
                 className="btn-close" 
                 onClick={() => setIsMenuOpen(false)}

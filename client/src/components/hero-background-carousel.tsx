@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 
 // Import all agricultural images
-import image1 from "@assets/1a062644fd9309daddd1764a29458335_1757703904284.jpg";
-import image2 from "@assets/5768607b3115c7d9eccce0b39ea1c320_1757704522498.jpg";
-import image3 from "@assets/9077dd55ebc0b7ce6e355aa8fe6dcca9 (1)_1757704522522.jpg";
-import image4 from "@assets/a1cded971e3f7e2416bef74a07a501f2_1757704522365.jpg";
+import image1 from "@assets/home4.jpg";
+import image2 from "@assets/home5.jpg";
+import image4 from "@assets/home2.jpg";
+import image5 from "@assets/home3.jpg";
+ 
 
-const backgroundImages = [image1, image2, image3, image4];
+ 
+
+const backgroundImages = [image1, image2,image4,image5];
 
 export default function HeroBackgroundCarousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

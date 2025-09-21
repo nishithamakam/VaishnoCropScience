@@ -1,3 +1,4 @@
+import { FaHeart } from 'react-icons/fa';
 export default function Footer() {
   return (
     <footer className="footer" data-testid="main-footer">
@@ -6,21 +7,22 @@ export default function Footer() {
           <div className="col-lg-4 mb-4">
             <h5 data-testid="footer-social-heading">Follow Us</h5>
             <div className="social-links">
+               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-testid="social-instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              
+              
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" data-testid="social-facebook">
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="social-twitter">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" data-testid="social-instagram">
-                <i className="fab fa-instagram"></i>
+              <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer" data-testid="social-googleplus">
+                <i className="fab fa-google"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="social-linkedin">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" data-testid="social-youtube">
-                <i className="fab fa-youtube"></i>
-              </a>
+
+            
             </div>
           </div>
           <div className="col-lg-4 mb-4">
@@ -49,10 +51,17 @@ export default function Footer() {
         <div className="row">
           <div className="col-12 text-center">
             <p data-testid="footer-copyright">
-              &copy; 2024 Vaishno Crop Science. All rights reserved. | Cultivating Excellence in Agriculture
+              &copy; 2025 Vaishno Crop Science. All rights reserved | Cultivating Excellence in Agriculture
             </p>
           </div>
         </div>
+        {/*<div className="row mt-3">
+          <div className="col-12 text-center" style={{ color: 'wheat', fontFamily: 'Playfair Display, serif', fontWeight: '600' }}>
+            Made by Nishitha Makam with<span style={{ color: 'red', fontSize: '1.5rem', marginLeft: '0.3rem' }}>&hearts;</span>
+          </div>
+          
+
+        </div>*/}
       </div>
     </footer>
   );

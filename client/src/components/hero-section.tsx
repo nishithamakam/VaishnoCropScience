@@ -11,11 +11,13 @@ export default function HeroSection() {
           <div className="col-lg-8">
             <div className="hero-content">
               <h1 className="font-display" data-testid="hero-title">
-                Cultivating Tomorrow's Agriculture
+                Empowering Farmers, Enriching Crops
               </h1>
-              <p data-testid="hero-description">
-                Leading agricultural solutions through innovative crop science and sustainable farming technologies
+              <p data-testid="hero-description" style={{ fontFamily: 'serif',fontSize:"22px",fontWeight:'10px'}}>
+                Leading provider of <span style={{color:'smokewhite',textDecorationLine:'overline',fontSize:"24px"}}>Organic plant growth Regulators and Fertilizers</span> designed to enhance agricultural productivity while supporting sustainable farming practices
               </p>
+               
+
               <Link href="/products" className="btn-custom" data-testid="hero-cta-button">
                 <i className="fas fa-seedling me-2"></i>Our Products
               </Link>
@@ -26,3 +28,4 @@ export default function HeroSection() {
     </section>
   );
 }
+ 

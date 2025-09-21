@@ -12,6 +12,7 @@ import NotFound from "@/pages/not-found";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FloatingMessageButton from "@/components/floating-message-button";
+ 
 
 function Router() {
   return (
@@ -21,7 +22,8 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/products" component={Products} />
+           
+         <Route path="/products" component={Products} />
           <Route path="/resources" component={Resources} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
