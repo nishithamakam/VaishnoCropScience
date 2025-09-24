@@ -14,7 +14,31 @@ import Footer from "@/components/footer";
 import FloatingMessageButton from "@/components/floating-message-button";
  
 
+import { Router as WouterRouter } from "wouter";
+
 function Router() {
+  return (
+    <WouterRouter base="/VaishnoCropScience">
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/products" component={Products} />
+            <Route path="/resources" component={Resources} />
+            <Route path="/contact" component={Contact} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+        <Footer />
+        <FloatingMessageButton />
+      </div>
+    </WouterRouter>
+  );
+}
+
+/*function Router() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -22,8 +46,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-           
-         <Route path="/products" component={Products} />
+          <Route path="/products" component={Products} />
           <Route path="/resources" component={Resources} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
@@ -33,7 +56,7 @@ function Router() {
       <FloatingMessageButton />
     </div>
   );
-}
+}*/
 
 function App() {
   return (
