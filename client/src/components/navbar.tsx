@@ -29,7 +29,7 @@ export default function Navbar() {
         <Link href="/" className="navbar-brand" data-testid="navbar-brand">
           <div className="logo-container">
             <VCSLogo />
-             <span style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: '2rem' }}>
+             <span style={{ fontFamily: 'Playfair Display, serif', fontWeight: 650, fontSize: '1.8rem' }}>
                Vaishno Crop Science
              </span>
 
