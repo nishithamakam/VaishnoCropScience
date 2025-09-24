@@ -1,6 +1,6 @@
 import logoImage from "@assets/logo.jpg";
 
-export default function VCSLogo({ size = 75 }: { size?: number }) {
+export default function VCSLogo({ size = 65 }: { size?: number }) {
   return (
     <img 
       src={logoImage}
