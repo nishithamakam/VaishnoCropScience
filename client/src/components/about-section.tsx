@@ -182,7 +182,16 @@ export default function AboutSection() {
             <div className="col-lg-6 know-more-content" data-testid="story-content">
               <div className="know-more-highlight">
                 <h2 data-testid="story-title">Know More About Us</h2>
-                <p data-testid="story-description-1" className="lead">
+                <p data-testid="story-description-1" className="lead" style={{
+                    fontFamily: 'Times New Roman',
+                    fontSize: '18.5px',
+                    lineHeight: '1.8',
+                    color: '#2c3e50',
+                    marginBottom: '0',
+                    fontWeight: '400',
+                    textAlign: 'justify',
+                     
+                  }}>
                       Vaishno Crop Science puts farmers first in every aspect of its business, offering a comprehensive range of agricultural solutions for crop health, soil fertility, and sustainable yield growth. Vaishno Crop Science empowers growers, 
                       from large-scale farms to home gardens, with products tailored to the needs of various crops such as rice, cotton, vegetables, and oil seeds.
                 </p>

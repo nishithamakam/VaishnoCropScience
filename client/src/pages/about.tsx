@@ -93,21 +93,22 @@ export default function About() {
                 <div className="know-more-highlight">
                   <p data-testid="story-description-1" className="lead" style={{
                     fontFamily: 'Times New Roman',
-                    fontSize: 'var(--font-lg)',
+                    fontSize: '18px',
                     lineHeight: '1.8',
                     color: '#2c3e50',
                     marginBottom: '0',
                     fontWeight: '400',
                     textAlign: 'justify',
-                    letterSpacing: '0.1px'
+                    
+                   
                   }}>
                      Vaishno Crop Science is based in Telangana and specializes in manufacturing and marketing organic agricultural 
                      products. The company's mission is to provide farmers with the best possible tools and resources to maximize crop yield, 
                      improve soil health, and minimize environmental impact.
-
                      Vaishno Crop Science is based in Telangana and specializes in manufacturing and marketing organic agricultural 
                      products. The company's mission is to provide farmers with the best possible tools and resources to maximize crop yield, 
                      improve soil health, and minimize environmental impact.
+ 
 
                   </p>
                 </div>
