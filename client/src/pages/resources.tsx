@@ -1,10 +1,8 @@
 import { BookOpen, Download, Leaf, TrendingUp, Calendar, Users, FileText, Lightbulb, Sprout, Droplets, Sun, Cloud } from 'lucide-react';
 
-// Import agricultural images
+ 
 import riceFieldImage from '@assets/home1.jpg';
-import farmingHandsImage from '@assets/home2.jpg';
-import wheatGrainsImage from '@assets/home3.jpg';
-import riceGrainsImage from '@assets/home4.jpg';
+ 
   
 export default function Resources() {
   return (
