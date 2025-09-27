@@ -194,7 +194,7 @@ export default function AboutSection() {
                 alt="Farmer's hands holding young rice plants"
                 className="img-fluid rounded shadow-lg"
                 data-testid="farming-hands-image"
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '70%', height: 'auto', margin: '0 auto', display: 'block' }}
               />
             </div>
           </div>

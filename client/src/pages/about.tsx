@@ -141,7 +141,7 @@ export default function About() {
           </p>
           <div className="d-flex justify-content-center gap-4 flex-wrap">
             <a 
-              href="/contact" 
+              href="/VaishnoCropScience/contact" 
               className="btn-custom"
               data-testid="contact-cta-button"
               style={{
@@ -165,7 +165,7 @@ export default function About() {
               Contact Us
             </a>
             <a 
-              href="/products" 
+              href="/VaishnoCropScience/products" 
               className="btn-custom"
               data-testid="products-cta-button"
               style={{

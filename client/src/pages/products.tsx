@@ -206,10 +206,11 @@ export default function Products() {
                 </div>
               </div>
               <div className="p-4 text-center">
-                <button className="btn-custom text-center py-2 px-5 text-white font-normal rounded-full transition-all duration-300 group-hover:shadow-lg text-xs inline-block flex items-center gap-2 mx-auto" 
+                <button className="btn-custom text-center py-1 px-3 text-white font-normal rounded-full transition-all duration-300 group-hover:shadow-lg inline-block flex items-center gap-1 mx-auto" 
                   style={{
                     background: 'linear-gradient(135deg, var(--primary-green), var(--secondary-green))',
-                    border: 'none'
+                    border: 'none',
+                    fontSize: '11px'
                   }}>
                   Click Here
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
@@ -265,12 +266,13 @@ export default function Products() {
                 {product.shortDesc}
               </p>
               <button
-                className="btn-custom py-2 px-4 text-white font-normal rounded-full transition-all duration-300 hover:shadow-lg text-sm"
+                className="btn-custom py-1 px-3 text-white font-normal rounded-full transition-all duration-300 hover:shadow-lg"
                 onClick={() => setOpenedProduct(product)}
                 type="button"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent-red), #dc2626)',
-                  border: 'none'
+                  border: 'none',
+                  fontSize: '10px'
                 }}
               >
                 View Details
@@ -355,10 +357,10 @@ export default function Products() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-green-900/40" />
         <div className="relative z-10 text-center">
-          <h1 className="text-white font-display font-bold text-3xl md:text-4xl mb-3 text-shadow-lg">
+          <h1 className="text-white font-display font-bold text-xl md:text-2xl mb-3 text-shadow-lg">
             {bannerTitle}
           </h1>
-          <p className="text-white/90 text-base md:text-lg font-normal max-w-2xl mx-auto px-4">
+          <p className="text-white/90 text-sm md:text-base font-normal max-w-xl mx-auto px-4">
             Discover our comprehensive range of organic agricultural solutions designed to enhance crop productivity and sustainability
           </p>
         </div>
