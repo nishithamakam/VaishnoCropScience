@@ -12,13 +12,22 @@ export default function HeroSection() {
             <div className="hero-content">
               <h1 className="font-display" data-testid="hero-title" style={{
                    
-                    fontSize: '58px',
+                    fontSize: '48px',margin: 0
                     
                   }} >
-                Empowering Farmers, Enriching Crops
+                Empowering Farmers,
+
+              </h1>
+               
+                <h1 className="font-display" data-testid="hero-title" style={{
+                   
+                    fontSize: '47px'
+                    
+                  }} >
+                Enriching Crops
               </h1>
               
-              <p data-testid="hero-description" style={{ fontFamily: 'serif',fontSize:"21px",fontWeight:'10px'}}>
+              <p data-testid="hero-description" style={{ fontFamily: 'serif',fontSize:"20px",fontWeight:'10px'}}>
                 Leading provider of <span style={{color:'smokewhite',textDecorationLine:'overline',fontSize:"24px"}}>Organic plant growth Regulators and Fertilizers</span> designed to enhance agricultural productivity while supporting sustainable farming practices
               </p>
                
