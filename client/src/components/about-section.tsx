@@ -146,50 +146,47 @@ export default function AboutSection() {
       {/* Latest Products Section */}
 
        <section
-        className="section bg-light-green py-10 overflow-hidden"
+        className="section latest-products-section overflow-hidden"
         data-testid="latest-products-section"
       >
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container">
           <h2 className="section-title text-center mb-8">Latest Products</h2>
           <div
             ref={carouselRef}
-            className="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth"
-            style={{ scrollBehavior: "smooth" }}
+            className="latest-products-carousel"
           >
-            {latestProducts.map((product) => (
+            {latestProducts.map((product, index) => (
               <div
-                key={product.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden flex-shrink-0 w-56 snap-center cursor-pointer"
+                key={`${product.id}-${index}`}
+                className="latest-product-card"
               >
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-36 object-cover"
+                  loading="lazy"
                 />
-                <div className="p-4">
-                  <h3 className="text-primary-green font-semibold text-lg">
-                    {product.name}
-                  </h3>
-                  <p className="text-muted text-sm">{product.shortDesc}</p>
+                <div className="latest-product-card-content">
+                  <h3>{product.name}</h3>
+                  <p>{product.shortDesc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      
+    
       {/* Know More Section */}
-      <section id="about" className="section" data-testid="about-section">
+      <section id="about" className="section know-more-section" data-testid="about-section">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6" data-testid="story-content">
-              <h2 className="section-title text-left" data-testid="story-title">Know More About Us</h2>
-              <p data-testid="story-description-1" className="lead">
-              
-                    Vaishno Crop Science puts farmers first in every aspect of its business, offering a comprehensive range of agricultural solutions for crop health, soil fertility, and sustainable yield growth. Vaishno Crop Science empowers growers, 
-                    from large-scale farms to home gardens, with products tailored to the needs of various crops such as rice, cotton, vegetables, and oil seeds.
-              </p>
-             
+            <div className="col-lg-6 know-more-content" data-testid="story-content">
+              <div className="know-more-highlight">
+                <h2 data-testid="story-title">Know More About Us</h2>
+                <p data-testid="story-description-1" className="lead">
+                      Vaishno Crop Science puts farmers first in every aspect of its business, offering a comprehensive range of agricultural solutions for crop health, soil fertility, and sustainable yield growth. Vaishno Crop Science empowers growers, 
+                      from large-scale farms to home gardens, with products tailored to the needs of various crops such as rice, cotton, vegetables, and oil seeds.
+                </p>
+              </div>
             </div>
             <div className="col-lg-6" data-testid="story-image">
               <img 
@@ -197,42 +194,38 @@ export default function AboutSection() {
                 alt="Farmer's hands holding young rice plants"
                 className="img-fluid rounded shadow-lg"
                 data-testid="farming-hands-image"
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '70%', height: 'auto', margin: '0 auto', display: 'block' }}
               />
             </div>
           </div>
         </div>
       </section>
     
-      <section className="section pt-4 pb-4" data-testid="statistics-section">
+      <section className="section our-impact-section pt-4 pb-4" data-testid="statistics-section">
         <div className="container">
           <h2 className="section-title" data-testid="statistics-title">Our Impact</h2>
           <br></br>
           <div className="row text-center justify-center gap-y-6">
             <div className="col-lg-3 col-md-6" data-testid="farmers-served">
-              <h3 className="text-primary font-weight-bold dynamic-num text-5xl" style={{fontWeight:"bolder"}} data-testid="farmers-count" data-target="1500">0+</h3>
-             
-              <h6 data-testid="farmers-label">Farmers Served</h6>
-              <p data-testid="farmers-description" className="small text-muted">Trusted by farmers across multiple states</p>
+              <div className="impact-number impact-number-blue dynamic-num" data-testid="farmers-count" data-target="1500">0+</div>
+              <h6 className="impact-label" data-testid="farmers-label">Farmers Served</h6>
+              <p className="impact-description" data-testid="farmers-description">Trusted by farmers across multiple states</p>
             </div>
             <div className="col-lg-3 col-md-6" data-testid="products-range">
-              <h3 className="text-success font-weight-bold dynamic-num text-5xl" style={{fontWeight:"bolder"}} data-testid="products-count" data-target="100">0+</h3>
-             
-              <h6 data-testid="products-label">Product Range</h6>
-              <p data-testid="products-description" className="small text-muted">Comprehensive agricultural solutions</p>
+              <div className="impact-number impact-number-green dynamic-num" data-testid="products-count" data-target="100">0+</div>
+              <h6 className="impact-label" data-testid="products-label">Product Range</h6>
+              <p className="impact-description" data-testid="products-description">Comprehensive agricultural solutions</p>
             </div>
             <div className="col-lg-3 col-md-6" data-testid="years-experience">
-              <h3 className="text-danger font-weight-bold dynamic-num text-5xl" style={{fontWeight:"bolder"}} data-testid="years-count" data-target="9">0+</h3>
-                
-              <h6 data-testid="years-label">Years of Excellence</h6>
-              <p data-testid="years-description" className="small text-muted">Continuous innovation and growth</p>
+              <div className="impact-number impact-number-red dynamic-num" data-testid="years-count" data-target="9">0+</div>
+              <h6 className="impact-label" data-testid="years-label">Years of Excellence</h6>
+              <p className="impact-description" data-testid="years-description">Continuous innovation and growth</p>
             </div>
             
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="/about" className="btn-custom flex items-center justify-center gap-2" data-testid="contact-cta-button">
-              <span className="inline-flex items-center">
-                <Mail size={20} />
-              </span> Know more
+            <a href="/about" className="btn-custom" data-testid="contact-cta-button">
+              <Mail size={20} />
+              <span>Know more</span>
             </a>
           </div>
           </div> 

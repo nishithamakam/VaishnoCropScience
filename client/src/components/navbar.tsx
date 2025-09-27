@@ -23,32 +23,62 @@ export default function Navbar() {
     setIsMenuOpen(false);
   }, [location]);
 
+  // Navbar scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className="navbar navbar-expand-lg fixed-top" data-testid="main-navbar">
       <div className="container">
-        <Link href="/" className="navbar-brand d-flex align-items-center flex-nowrap" data-testid="navbar-brand">
+        <Link href="/" className="navbar-brand d-flex align-items-center" data-testid="navbar-brand">
           <div className="logo-container">
-            <VCSLogo />
-             <span className="ms-2 text-truncate" style={{ fontFamily: 'Playfair Display, serif', fontWeight: 640, fontSize: '1.15rem', minWidth: 0 }}>
-               Vaishno Crop Science
-             </span>
-
+            <VCSLogo size={60} />
+            <span className="brand-text ms-2">
+              Vaishno Crop Science
+            </span>
           </div>
         </Link>
         
         <button 
-          className="navbar-toggler d-lg-none" 
+          className="navbar-toggler custom-toggler d-lg-none" 
           type="button" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           data-testid="navbar-toggle"
           aria-controls="navbarNav"
           aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation menu"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'active' : ''}`}></span>
         </button>
         
         {/* Desktop Navigation */}
-        <div className="d-none d-lg-flex gap-5 align-items-center" style={{ marginLeft: 'auto' }}>
+        <div className="desktop-nav d-none d-lg-flex align-items-center">
           <Link 
             href="/" 
             className="nav-btn-circular"
